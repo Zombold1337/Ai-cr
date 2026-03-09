@@ -1,24 +1,26 @@
-# Ai-cr – AI Change Reviewer
+# Ai-cr - AI Change Reviewer
 
-Ein kleines, **lokales** Tool, das AI-generierten Code (von Cursor, Claude, Copilot, Aider, Windsurf usw.) prüft, **bevor** du commitest.
+A small, **local-first** tool that reviews **AI-generated code** (from Cursor, Claude, Copilot, Aider, Windsurf, etc.) **before** you commit.
 
-- Erkennt typische AI-Fehler (Halluzinationen, subtile Bugs, Over-Refactoring, Security-Probleme)
-- Läuft komplett offline mit Ollama (keine Cloud, keine Kosten, kein Datenschutz-Risiko)
-- Kann als Pre-Commit-Hook laufen
-- Noch ganz am Anfang – erste Version kommt bald!
+### Features (planned / in progress)
+- Detects typical AI-specific mistakes  
+  (hallucinations, subtle bugs, over-refactoring, inconsistent error handling, security issues, etc.)
+- Runs completely offline using Ollama  
+  (no cloud calls, no API costs, no data privacy risks)
+- Can be used as a pre-commit hook
+- Interactive mode (suggest fixes or ignore certain patterns)
+- Still very early stage – MVP coming soon!
 
-## Warum das nützlich ist
-Viele Entwickler werden durch AI schneller, aber AI macht auch subtile Fehler, die man später debuggen muss.  
-Ai-cr soll helfen, diese früh zu fangen – lokal und ohne dass der Code irgendwo hochgeladen wird.
+### Why this tool?
+AI coding assistants make us faster on simple tasks, but they often introduce hard-to-spot bugs in complex or legacy code.  
+Ai-cr helps catch these issues **early** and **locally** – without sending your code anywhere.
 
-## Status
-- In Entwicklung  
-- MVP: CLI + Ollama + Diff-Analyse  
-- Ziel: Pre-Commit + einfache Regeln
+### Current status
+- In development  
+- Goal for MVP: simple CLI + Ollama integration + git diff analysis  
+- Feedback, issues, stars and pull requests are very welcome! 🚀
 
-Feedback, Issues oder Pull Requests sind super willkommen! 🚀
+### How to try / contribute
+(Installation instructions coming soon)
 
-## Wie mitmachen / ausprobieren
-(Bald: Install-Anleitung hier)
-
-Lizenz: MIT
+License: MIT
