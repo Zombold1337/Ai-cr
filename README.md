@@ -24,3 +24,8 @@ Ai-cr helps catch these issues **early** and **locally** – without sending you
 (Installation instructions coming soon)
 
 License: MIT
+
+## Support this project
+
+If you like Ai-cr, consider sponsoring development on GitHub Sponsors!  
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-ef4444)](https://github.com/sponsors/Zombold1337)
