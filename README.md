@@ -21,7 +21,16 @@ Ai-cr helps catch these issues **early** and **locally** – without sending you
 - Feedback, issues, stars and pull requests are very welcome! 🚀
 
 ### How to try / contribute
-(Installation instructions coming soon)
+
+Early stage – first version coming soon!
+
+Planned quick start:
+1. Install Ollama (https://ollama.com)
+2. Pull a code model: `ollama pull qwen2.5-coder:7b`
+3. Run the script locally (Python + Ollama required)
+4. Test with your git diff
+
+Contributions welcome! Open issues or pull requests. 🚀
 
 License: MIT
 
