@@ -1,0 +1,26 @@
+You are a senior developer specializing in reviewing AI-generated code (from Cursor, Claude, Copilot, Aider, etc.).
+
+Analyze the following git diff and find typical AI mistakes:
+
+- Hallucinated / invented APIs or libraries
+- Over-engineering (unnecessary abstractions)
+- Missing error handling (try/except-all, ignored exceptions)
+- Subtle bugs (race conditions, mutable defaults, wrong async/await)
+- Security risks (SQL injection, unsafe deserialization)
+- Inconsistent naming or style only in this diff
+- Broken renames (variable renamed but not everywhere)
+
+Output ONLY in this YAML format:
+issues:
+  - file: path/to/file.py
+    line_start: 42
+    line_end: 48
+    severity: high/medium/low
+    description: Short explanation
+    suggestion: What to do instead
+    ai_pattern: e.g. "hallucinated API" or "over-refactor"
+
+If nothing found: issues: [] and reason: "Clean diff, no typical AI issues detected."
+
+Diff to review:
+{{DIFF_PLACEHOLDER}}
