@@ -1,4 +1,5 @@
 import requests
+import subprocess
 import sys
 
 PROMPT_FILE = "prompts/review_ai_diff.txt"
@@ -8,9 +9,12 @@ def load_prompt():
     with open(PROMPT_FILE, "r", encoding="utf-8") as f:
         return f.read()
 
-def load_diff(diff_path):
-    with open(diff_path, "r", encoding="utf-8") as f:
-        return f.read()
+def get_git_diff():
+    result = subprocess.run(
+        ["git", "diff"],
+        capture_output=True, text=True, encoding="utf-8"
+    )
+    return result.stdout
 
 def ask_ollama(prompt_text):
     response = requests.post(
@@ -28,11 +32,12 @@ def clean_yaml(text):
     return text.strip()
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Nutzung: python ai_cr.py <pfad-zum-diff>")
-        sys.exit(1)
+    diff_content = get_git_diff()
 
-    diff_content = load_diff(sys.argv[1])
+    if not diff_content.strip():
+        print("Kein Diff gefunden. Hast du ungespeicherte Änderungen im Repo?")
+        sys.exit(0)
+
     prompt_template = load_prompt()
     full_prompt = prompt_template.replace("{{DIFF_PLACEHOLDER}}", diff_content)
 
