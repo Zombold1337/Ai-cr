@@ -20,15 +20,31 @@ Ai-cr helps catch these issues **early** and **locally** – without sending you
 - Goal for MVP: simple CLI + Ollama integration + git diff analysis  
 - Feedback, issues, stars and pull requests are very welcome! 🚀
 
-### How to try / contribute
+## How to try / contribute
 
-Early stage – first version coming soon!
+**Requirements:** Python 3.10+, Git, [Ollama](https://ollama.com)
 
-Planned quick start:
-1. Install Ollama (https://ollama.com)
-2. Pull a code model: `ollama pull qwen2.5-coder:7b`
-3. Run the script locally (Python + Ollama required)
-4. Test with your git diff
+1. Clone this repo:
+
+git clone https://github.com/Zombold1337/Ai-cr.git
+cd Ai-cr
+
+2. Install dependencies:
+
+pip install -r requirements.txt
+
+3. Pull a code model with Ollama:
+
+ollama pull qwen2.5-coder:7b
+
+4. Make some changes in a git repo, then run:
+
+python ai_cr.py
+
+   This analyzes your staged/unstaged git diff automatically.
+
+**Optional: automatic pre-commit checks**
+Copy `ai_cr.py`'s logic into `.git/hooks/pre-commit` (no file extension) in your own repo to run Ai-cr automatically before every commit.
 
 Contributions welcome! Open issues or pull requests. 🚀
 
