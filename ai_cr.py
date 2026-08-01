@@ -18,7 +18,7 @@ def load_prompt():
 def get_git_diff():
     try:
         result = subprocess.run(
-            ["git", "diff"],
+            ["git", "diff", "--cached" ],
             capture_output=True, text=True, encoding="utf-8"
         )
     except FileNotFoundError:
